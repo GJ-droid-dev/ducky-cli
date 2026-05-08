@@ -46,12 +46,12 @@ Build a Node.js CLI tool (`ducky`) that passively monitors a developer's local e
 **Goal:** Implement a persistent background watcher that survives after the terminal command returns, with clean start/stop lifecycle.
 
 **Tasks:**
-- [ ] Create `src/daemon.js` — the long-running background process entry point
-- [ ] In `ducky start`: spawn `daemon.js` as a detached child process (`detached: true`, `stdio: 'ignore'`, `unref()`)
-- [ ] Write the daemon's PID and session start time to a state file (e.g., `~/.ducky/session.json`)
-- [ ] In `ducky start`: check for an existing `session.json` — if PID is alive, print "already tracking" and exit
-- [ ] In `ducky stop`: read `session.json`, send `SIGTERM` to the daemon PID, delete the state file
-- [ ] Handle edge cases: stale PID file (process no longer alive), missing state file on `stop`
+- [x] Create `src/daemon.js` — the long-running background process entry point
+- [x] In `ducky start`: spawn `daemon.js` as a detached child process (`detached: true`, `stdio: 'ignore'`, `unref()`)
+- [x] Write the daemon's PID and session start time to a state file (e.g., `~/.ducky/session.json`)
+- [x] In `ducky start`: check for an existing `session.json` — if PID is alive, print "already tracking" and exit
+- [x] In `ducky stop`: read `session.json`, send `SIGTERM` to the daemon PID, delete the state file
+- [x] Handle edge cases: stale PID file (process no longer alive), missing state file on `stop`
 
 **Acceptance Criteria:**
 - `ducky start` returns to the prompt immediately; daemon continues running
