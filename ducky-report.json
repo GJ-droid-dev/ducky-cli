@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "sessionStart": "2026-05-08T17:36:41.748Z",
+    "sessionEnd": "2026-05-08T17:39:03.759Z",
+    "durationSeconds": 142,
+    "projectDirectory": "C:\\Users\\jangr\\Documents\\Litmus assesment\\ducky-cli"
+  },
+  "tracking": {
+    "fileSystem": {
+      "events": [
+        {
+          "timestamp": "2026-05-08T17:38:23.722Z",
+          "type": "add",
+          "path": "Test.md",
+          "isAiRelatedFile": false
+        }
+      ]
+    },
+    "processes": {
+      "aiToolsDetected": [],
+      "snapshots": []
+    },
+    "git": {
+      "commits": [
+        {
+          "hash": "5b76fe7861706bcbfe626524579528a7f8693afa",
+          "timestamp": "2026-05-08T22:58:44+05:30",
+          "message": "Project completed with additional research for GTM and feature prioritization.",
+          "author": "Gaurav Jangra",
+          "filesChanged": 2,
+          "linesAdded": 230,
+          "linesRemoved": 4
+        },
+        {
+          "hash": "716982a953a3f65aca9ce7066ca770556890d517",
+          "timestamp": "2026-05-08T22:47:58+05:30",
+          "message": "Fix: suppress CMD windows on Windows by adding windowsHide to all exec calls",
+          "author": "Gaurav Jangra",
+          "filesChanged": 4,
+          "linesAdded": 4,
+          "linesRemoved": 4
+        },
+        {
+          "hash": "a2978050547556bc7db68073f66d977c3e69f206",
+          "timestamp": "2026-05-08T22:45:07+05:30",
+          "message": "Milestones 4-8 complete: signal trackers, report generation, robustness, WRITEUP",
+          "author": "Gaurav Jangra",
+          "filesChanged": 14,
+          "linesAdded": 1554,
+          "linesRemoved": 32
+        },
+        {
+          "hash": "6be1a119bf34dcea5a67f41801338ae6bbed3a82",
+          "timestamp": "2026-05-08T22:18:02+05:30",
+          "message": "Milestone 3 complete",
+          "author": "Gaurav Jangra",
+          "filesChanged": 4,
+          "linesAdded": 170,
+          "linesRemoved": 8
+        },
+        {
+          "hash": "4bcb33fa7b7451a87eb5768803a80dcb6f975622",
+          "timestamp": "2026-05-08T22:12:47+05:30",
+          "message": "Milestone 2 complete",
+          "author": "Gaurav Jangra",
+          "filesChanged": 1,
+          "linesAdded": 11,
+          "linesRemoved": 11
+        },
+        {
+          "hash": "9c7128480d2451d909d8e32582fb4b5e316ddbca",
+          "timestamp": "2026-05-08T22:10:01+05:30",
+          "message": "Plan created and Milestone 1 completed",
+          "author": "Gaurav Jangra",
+          "filesChanged": 5,
+          "linesAdded": 291,
+          "linesRemoved": 0
+        },
+        {
+          "hash": "e16ccf65432da5f0738d5104bb8ae91e22d8e462",
+          "timestamp": "2026-05-08T21:55:35+05:30",
+          "message": "Assessment: initial state",
+          "author": "Gaurav Jangra",
+          "filesChanged": 4,
+          "linesAdded": 89,
+          "linesRemoved": 0
+        },
+        {
+          "hash": "ea56b3977e202f2878efdd9f48add154928cdb9d",
+          "timestamp": "2026-05-08T23:07:54+05:30",
+          "message": "test 01",
+          "author": "Gaurav Jangra",
+          "filesChanged": 1,
+          "linesAdded": 57,
+          "linesRemoved": 26
+        }
+      ],
+      "largeDiffEvents": [
+        {
+          "hash": "5b76fe7861706bcbfe626524579528a7f8693afa",
+          "timestamp": "2026-05-08T22:58:44+05:30",
+          "message": "Project completed with additional research for GTM and feature prioritization.",
+          "author": "Gaurav Jangra",
+          "filesChanged": 2,
+          "linesAdded": 230,
+          "linesRemoved": 4,
+          "flag": "large_addition",
+          "note": "230 lines added in a single commit — possible AI-generated content"
+        },
+        {
+          "hash": "a2978050547556bc7db68073f66d977c3e69f206",
+          "timestamp": "2026-05-08T22:45:07+05:30",
+          "message": "Milestones 4-8 complete: signal trackers, report generation, robustness, WRITEUP",
+          "author": "Gaurav Jangra",
+          "filesChanged": 14,
+          "linesAdded": 1554,
+          "linesRemoved": 32,
+          "flag": "large_addition",
+          "note": "1554 lines added in a single commit — possible AI-generated content"
+        },
+        {
+          "hash": "6be1a119bf34dcea5a67f41801338ae6bbed3a82",
+          "timestamp": "2026-05-08T22:18:02+05:30",
+          "message": "Milestone 3 complete",
+          "author": "Gaurav Jangra",
+          "filesChanged": 4,
+          "linesAdded": 170,
+          "linesRemoved": 8,
+          "flag": "large_addition",
+          "note": "170 lines added in a single commit — possible AI-generated content"
+        },
+        {
+          "hash": "9c7128480d2451d909d8e32582fb4b5e316ddbca",
+          "timestamp": "2026-05-08T22:10:01+05:30",
+          "message": "Plan created and Milestone 1 completed",
+          "author": "Gaurav Jangra",
+          "filesChanged": 5,
+          "linesAdded": 291,
+          "linesRemoved": 0,
+          "flag": "large_addition",
+          "note": "291 lines added in a single commit — possible AI-generated content"
+        },
+        {
+          "hash": "e16ccf65432da5f0738d5104bb8ae91e22d8e462",
+          "timestamp": "2026-05-08T21:55:35+05:30",
+          "message": "Assessment: initial state",
+          "author": "Gaurav Jangra",
+          "filesChanged": 4,
+          "linesAdded": 89,
+          "linesRemoved": 0,
+          "flag": "large_addition",
+          "note": "89 lines added in a single commit — possible AI-generated content"
+        },
+        {
+          "hash": "ea56b3977e202f2878efdd9f48add154928cdb9d",
+          "timestamp": "2026-05-08T23:07:54+05:30",
+          "message": "test 01",
+          "author": "Gaurav Jangra",
+          "filesChanged": 1,
+          "linesAdded": 57,
+          "linesRemoved": 26,
+          "flag": "large_addition",
+          "note": "57 lines added in a single commit — possible AI-generated content"
+        }
+      ]
+    },
+    "clipboard": {
+      "changeCount": 1,
+      "largePasteEvents": []
+    },
+    "network": {
+      "aiConnectionEvents": []
+    },
+    "editorState": {
+      "aiExtensions": [],
+      "relevantSettings": {}
+    }
+  }
+}
