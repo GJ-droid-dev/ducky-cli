@@ -1,13 +1,44 @@
 {
   "metadata": {
-    "sessionStart": "2026-05-08T17:13:21.783Z",
-    "sessionEnd": "2026-05-08T17:13:29.963Z",
-    "durationSeconds": 8,
+    "sessionStart": "2026-05-08T17:18:57.420Z",
+    "sessionEnd": "2026-05-08T17:20:01.520Z",
+    "durationSeconds": 64,
     "projectDirectory": "C:\\Users\\jangr\\Documents\\Litmus assesment\\ducky-cli\\ducky-assessment"
   },
   "tracking": {
     "fileSystem": {
-      "events": []
+      "events": [
+        {
+          "timestamp": "2026-05-08T17:19:12.541Z",
+          "type": "add",
+          "path": "readme-test.txt",
+          "isAiRelatedFile": false
+        },
+        {
+          "timestamp": "2026-05-08T17:19:14.551Z",
+          "type": "change",
+          "path": "readme-test.txt",
+          "isAiRelatedFile": false
+        },
+        {
+          "timestamp": "2026-05-08T17:19:16.447Z",
+          "type": "unlink",
+          "path": "readme-test.txt",
+          "isAiRelatedFile": false
+        },
+        {
+          "timestamp": "2026-05-08T17:19:27.743Z",
+          "type": "add",
+          "path": ".cursorrules",
+          "isAiRelatedFile": true
+        },
+        {
+          "timestamp": "2026-05-08T17:19:34.670Z",
+          "type": "unlink",
+          "path": ".cursorrules",
+          "isAiRelatedFile": true
+        }
+      ]
     },
     "processes": {
       "aiToolsDetected": [],
@@ -15,6 +46,24 @@
     },
     "git": {
       "commits": [
+        {
+          "hash": "716982a953a3f65aca9ce7066ca770556890d517",
+          "timestamp": "2026-05-08T22:47:58+05:30",
+          "message": "Fix: suppress CMD windows on Windows by adding windowsHide to all exec calls",
+          "author": "Gaurav Jangra",
+          "filesChanged": 4,
+          "linesAdded": 4,
+          "linesRemoved": 4
+        },
+        {
+          "hash": "a2978050547556bc7db68073f66d977c3e69f206",
+          "timestamp": "2026-05-08T22:45:07+05:30",
+          "message": "Milestones 4-8 complete: signal trackers, report generation, robustness, WRITEUP",
+          "author": "Gaurav Jangra",
+          "filesChanged": 14,
+          "linesAdded": 1554,
+          "linesRemoved": 32
+        },
         {
           "hash": "6be1a119bf34dcea5a67f41801338ae6bbed3a82",
           "timestamp": "2026-05-08T22:18:02+05:30",
@@ -53,6 +102,17 @@
         }
       ],
       "largeDiffEvents": [
+        {
+          "hash": "a2978050547556bc7db68073f66d977c3e69f206",
+          "timestamp": "2026-05-08T22:45:07+05:30",
+          "message": "Milestones 4-8 complete: signal trackers, report generation, robustness, WRITEUP",
+          "author": "Gaurav Jangra",
+          "filesChanged": 14,
+          "linesAdded": 1554,
+          "linesRemoved": 32,
+          "flag": "large_addition",
+          "note": "1554 lines added in a single commit — possible AI-generated content"
+        },
         {
           "hash": "6be1a119bf34dcea5a67f41801338ae6bbed3a82",
           "timestamp": "2026-05-08T22:18:02+05:30",
