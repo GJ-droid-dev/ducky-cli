@@ -1,4 +1,4 @@
-import { spawn } from 'child_process';
+import { spawn, execSync } from 'child_process';
 import { existsSync, mkdirSync, writeFileSync, readFileSync, unlinkSync } from 'fs';
 import { homedir } from 'os';
 import { join, dirname } from 'path';
@@ -17,6 +17,27 @@ function isProcessAlive(pid) {
     // EPERM means process exists but we lack permission — treat as alive
     return err.code === 'EPERM';
   }
+}
+
+/**
+ * Kill any orphaned daemon.js processes that are not tracked by session.json.
+ * This prevents multiple daemons writing to the same tracking.json.
+ */
+function killOrphanedDaemons(registeredPid) {
+  try {
+    // Use WMIC on Windows to find node processes running daemon.js
+    const out = execSync(
+      'wmic process where "name=\'node.exe\'" get ProcessId,CommandLine /format:csv',
+      { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] }
+    );
+    for (const line of out.split('\n')) {
+      if (!line.includes('daemon.js')) continue;
+      const parts = line.split(',');
+      const pid = parseInt(parts[parts.length - 1].trim(), 10);
+      if (!pid || pid === registeredPid || pid === process.pid) continue;
+      try { process.kill(pid, 'SIGTERM'); } catch { /* already dead */ }
+    }
+  } catch { /* WMIC not available or failed — ignore */ }
 }
 
 export async function start() {
@@ -42,6 +63,9 @@ export async function start() {
     }
   }
 
+  // Evict any orphaned daemon.js processes before starting a clean one
+  killOrphanedDaemons(null);
+
   mkdirSync(DUCKY_DIR, { recursive: true });
 
   // Spawn daemon as a fully detached background process
@@ -64,3 +88,4 @@ export async function start() {
   console.log(`        Data    : ${DUCKY_DIR}`);
   console.log(`        PID     : ${child.pid}`);
 }
+

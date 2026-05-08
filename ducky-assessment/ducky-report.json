@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "sessionStart": "2026-05-08T17:13:21.783Z",
+    "sessionEnd": "2026-05-08T17:13:29.963Z",
+    "durationSeconds": 8,
+    "projectDirectory": "C:\\Users\\jangr\\Documents\\Litmus assesment\\ducky-cli\\ducky-assessment"
+  },
+  "tracking": {
+    "fileSystem": {
+      "events": []
+    },
+    "processes": {
+      "aiToolsDetected": [],
+      "snapshots": []
+    },
+    "git": {
+      "commits": [
+        {
+          "hash": "6be1a119bf34dcea5a67f41801338ae6bbed3a82",
+          "timestamp": "2026-05-08T22:18:02+05:30",
+          "message": "Milestone 3 complete",
+          "author": "Gaurav Jangra",
+          "filesChanged": 4,
+          "linesAdded": 170,
+          "linesRemoved": 8
+        },
+        {
+          "hash": "4bcb33fa7b7451a87eb5768803a80dcb6f975622",
+          "timestamp": "2026-05-08T22:12:47+05:30",
+          "message": "Milestone 2 complete",
+          "author": "Gaurav Jangra",
+          "filesChanged": 1,
+          "linesAdded": 11,
+          "linesRemoved": 11
+        },
+        {
+          "hash": "9c7128480d2451d909d8e32582fb4b5e316ddbca",
+          "timestamp": "2026-05-08T22:10:01+05:30",
+          "message": "Plan created and Milestone 1 completed",
+          "author": "Gaurav Jangra",
+          "filesChanged": 5,
+          "linesAdded": 291,
+          "linesRemoved": 0
+        },
+        {
+          "hash": "e16ccf65432da5f0738d5104bb8ae91e22d8e462",
+          "timestamp": "2026-05-08T21:55:35+05:30",
+          "message": "Assessment: initial state",
+          "author": "Gaurav Jangra",
+          "filesChanged": 4,
+          "linesAdded": 89,
+          "linesRemoved": 0
+        }
+      ],
+      "largeDiffEvents": [
+        {
+          "hash": "6be1a119bf34dcea5a67f41801338ae6bbed3a82",
+          "timestamp": "2026-05-08T22:18:02+05:30",
+          "message": "Milestone 3 complete",
+          "author": "Gaurav Jangra",
+          "filesChanged": 4,
+          "linesAdded": 170,
+          "linesRemoved": 8,
+          "flag": "large_addition",
+          "note": "170 lines added in a single commit — possible AI-generated content"
+        },
+        {
+          "hash": "9c7128480d2451d909d8e32582fb4b5e316ddbca",
+          "timestamp": "2026-05-08T22:10:01+05:30",
+          "message": "Plan created and Milestone 1 completed",
+          "author": "Gaurav Jangra",
+          "filesChanged": 5,
+          "linesAdded": 291,
+          "linesRemoved": 0,
+          "flag": "large_addition",
+          "note": "291 lines added in a single commit — possible AI-generated content"
+        },
+        {
+          "hash": "e16ccf65432da5f0738d5104bb8ae91e22d8e462",
+          "timestamp": "2026-05-08T21:55:35+05:30",
+          "message": "Assessment: initial state",
+          "author": "Gaurav Jangra",
+          "filesChanged": 4,
+          "linesAdded": 89,
+          "linesRemoved": 0,
+          "flag": "large_addition",
+          "note": "89 lines added in a single commit — possible AI-generated content"
+        }
+      ]
+    },
+    "clipboard": {
+      "changeCount": 1,
+      "largePasteEvents": []
+    },
+    "network": {
+      "aiConnectionEvents": []
+    },
+    "editorState": {
+      "aiExtensions": [],
+      "relevantSettings": {}
+    }
+  }
+}

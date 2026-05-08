@@ -65,35 +65,35 @@ Build a Node.js CLI tool (`ducky`) that passively monitors a developer's local e
 **Goal:** Implement passive, local-only tracking of as many AI usage signals as possible inside the daemon.
 
 #### 4a — File System Watcher
-- [ ] Watch the project directory (path stored in `session.json`) for file change events using `fs.watch` or `chokidar`
-- [ ] Record: timestamp, file path, event type (add/change/unlink)
-- [ ] Detect known AI-generated file patterns (e.g., large single-commit additions, `.cursorrules`, `.copilot/`, `AGENTS.md`, `.github/copilot-instructions.md`)
+- [x] Watch the project directory (path stored in `session.json`) for file change events using `fs.watch` or `chokidar`
+- [x] Record: timestamp, file path, event type (add/change/unlink)
+- [x] Detect known AI-generated file patterns (e.g., large single-commit additions, `.cursorrules`, `.copilot/`, `AGENTS.md`, `.github/copilot-instructions.md`)
 
 #### 4b — Process Snapshot Polling
-- [ ] Poll running processes every N seconds using `tasklist` (Windows) / `ps` (Unix)
-- [ ] Flag known AI tool processes: `copilot`, `cursor`, `claude`, `chatgpt`, `codeium`, `tabnine`, `continue`, `supermaven`
-- [ ] Record: process name, PID, first-seen time, last-seen time, total presence duration
+- [x] Poll running processes every N seconds using `tasklist` (Windows) / `ps` (Unix)
+- [x] Flag known AI tool processes: `copilot`, `cursor`, `claude`, `chatgpt`, `codeium`, `tabnine`, `continue`, `supermaven`
+- [x] Record: process name, PID, first-seen time, last-seen time, total presence duration
 
 #### 4c — Git Activity Monitoring
-- [ ] Poll `git log` and `git diff --stat` against the project directory
-- [ ] Detect: commit frequency, commit message patterns (e.g., "fix", "refactor", generated boilerplate phrases)
-- [ ] Detect unusually large diffs (high lines-added in a short time — a proxy for pasted AI output)
-- [ ] Record: commit hash, timestamp, message, files changed, lines added/removed
+- [x] Poll `git log` and `git diff --stat` against the project directory
+- [x] Detect: commit frequency, commit message patterns (e.g., "fix", "refactor", generated boilerplate phrases)
+- [x] Detect unusually large diffs (high lines-added in a short time — a proxy for pasted AI output)
+- [x] Record: commit hash, timestamp, message, files changed, lines added/removed
 
 #### 4d — Clipboard Monitoring
-- [ ] Poll the system clipboard at a regular interval
-- [ ] Detect changes; record a hash (not the raw content) of each unique clipboard value and its length
-- [ ] Flag clipboard entries that are large (>200 chars) as potential AI-paste events
+- [x] Poll the system clipboard at a regular interval
+- [x] Detect changes; record a hash (not the raw content) of each unique clipboard value and its length
+- [x] Flag clipboard entries that are large (>200 chars) as potential AI-paste events
 
 #### 4e — Network Activity Sampling (passive)
-- [ ] Periodically check active TCP connections using `netstat` output parsed locally
-- [ ] Flag connections to known AI service hostnames: `api.openai.com`, `api.anthropic.com`, `copilot.githubusercontent.com`, `api.cursor.sh`, `codeium.com`, `api.cohere.ai`
-- [ ] Record: timestamp, remote host/IP, local port (no request bodies — passive only)
+- [x] Periodically check active TCP connections using `netstat` output parsed locally
+- [x] Flag connections to known AI service hostnames: `api.openai.com`, `api.anthropic.com`, `copilot.githubusercontent.com`, `api.cursor.sh`, `codeium.com`, `api.cohere.ai`
+- [x] Record: timestamp, remote host/IP, local port (no request bodies — passive only)
 
 #### 4f — Editor State (VS Code)
-- [ ] Check for the presence of VS Code extension directories in `~/.vscode/extensions/` matching AI tool names (`github.copilot*`, `cursor*`, `codeium*`, `continue*`, `tabnine*`)
-- [ ] Read VS Code settings (`settings.json`) for AI-related config keys if present
-- [ ] Record: installed AI extensions (name, version), relevant settings keys (values redacted for privacy)
+- [x] Check for the presence of VS Code extension directories in `~/.vscode/extensions/` matching AI tool names (`github.copilot*`, `cursor*`, `codeium*`, `continue*`, `tabnine*`)
+- [x] Read VS Code settings (`settings.json`) for AI-related config keys if present
+- [x] Record: installed AI extensions (name, version), relevant settings keys (values redacted for privacy)
 
 **Acceptance Criteria:**
 - All trackers run inside the daemon without throwing unhandled exceptions
