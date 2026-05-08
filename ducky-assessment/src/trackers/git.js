@@ -1,7 +1,7 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
-const execAsync = promisify(exec);
+const execAsync = (cmd, opts) => promisify(exec)(cmd, { windowsHide: true, ...opts });
 
 // Lines-added threshold above which a commit is flagged as suspiciously large
 const LARGE_DIFF_THRESHOLD = 50;

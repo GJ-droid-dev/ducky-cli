@@ -1,7 +1,7 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
-const execAsync = promisify(exec);
+const execAsync = (cmd, opts) => promisify(exec)(cmd, { windowsHide: true, ...opts });
 
 // Known AI tool process name keywords (case-insensitive substring match)
 const AI_PROCESS_KEYWORDS = [

@@ -28,7 +28,7 @@ function killOrphanedDaemons(registeredPid) {
     // Use WMIC on Windows to find node processes running daemon.js
     const out = execSync(
       'wmic process where "name=\'node.exe\'" get ProcessId,CommandLine /format:csv',
-      { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] }
+      { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'], windowsHide: true }
     );
     for (const line of out.split('\n')) {
       if (!line.includes('daemon.js')) continue;
