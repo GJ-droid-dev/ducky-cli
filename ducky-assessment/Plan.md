@@ -106,12 +106,12 @@ Build a Node.js CLI tool (`ducky`) that passively monitors a developer's local e
 **Goal:** On `ducky stop`, produce a valid, well-structured `ducky-report.json` in the project root.
 
 **Tasks:**
-- [ ] Daemon writes accumulated tracking data to a temp log file (e.g., `~/.ducky/tracking.json`) incrementally
-- [ ] On `ducky stop`, read the temp log and the session state file
-- [ ] Compute derived metrics: total AI process time, total clipboard paste events, git diff anomaly count, network AI calls count
-- [ ] Build the report object with required structure (see below)
-- [ ] Write `ducky-report.json` to the project root directory (path from `session.json`)
-- [ ] Print a human-readable summary to stdout before exiting
+- [x] Daemon writes accumulated tracking data to a temp log file (e.g., `~/.ducky/tracking.json`) incrementally
+- [x] On `ducky stop`, read the temp log and the session state file
+- [x] Compute derived metrics: total AI process time, total clipboard paste events, git diff anomaly count, network AI calls count
+- [x] Build the report object with required structure (see below)
+- [x] Write `ducky-report.json` to the project root directory (path from `session.json`)
+- [x] Print a human-readable summary to stdout before exiting
 
 **Report Structure:**
 ```json
@@ -145,11 +145,13 @@ Build a Node.js CLI tool (`ducky`) that passively monitors a developer's local e
 **Goal:** Ensure the tool handles failure gracefully without leaving stale state.
 
 **Tasks:**
-- [ ] Daemon catches and logs all unhandled promise rejections / exceptions to `~/.ducky/error.log` instead of crashing
-- [ ] `ducky start` handles permissions errors on the watch directory
-- [ ] `ducky stop` handles a stale PID (process already dead) gracefully
-- [ ] On daemon startup, validate the project directory still exists
-- [ ] Ensure all file handles and watchers are closed before the daemon exits
+- [x] Daemon catches and logs all unhandled promise rejections / exceptions to `~/.ducky/error.log` instead of crashing
+- [x] `ducky start` handles permissions errors on the watch directory
+- [x] `ducky stop` handles a stale PID (process already dead) gracefully
+- [x] On daemon startup, validate the project directory still exists
+- [x] Ensure all file handles and watchers are closed before the daemon exits
+- [x] `ducky start` kills any orphaned daemon processes before spawning a new one (prevents multiple daemons writing to the same `tracking.json`)
+- [x] All `exec`/`execSync` calls use `windowsHide: true` to suppress CMD popup windows on Windows
 
 **Acceptance Criteria:**
 - No zombie processes under any tested scenario
@@ -161,13 +163,13 @@ Build a Node.js CLI tool (`ducky`) that passively monitors a developer's local e
 **Goal:** Deliver the required written reflection covering tracking approach, signal value, and limitations.
 
 **Tasks:**
-- [ ] Section 1: Document each signal tracked, the rationale, and what it reveals about AI usage
-- [ ] Section 2: Argue why AI usage tracking provides signal about developer ability that traditional assessments miss
-- [ ] Section 3: Propose at least 3 additional signals/services (e.g., keystroke dynamics, LLM API key presence, browser history analysis, IDE telemetry APIs) with justifications and integration approach
+- [x] Section 1: Document each signal tracked, the rationale, and what it reveals about AI usage
+- [x] Section 2: Argue why AI usage tracking provides signal about developer ability that traditional assessments miss
+- [x] Section 3: Propose at least 3 additional signals/services (e.g., keystroke dynamics, LLM API key presence, browser history analysis, IDE telemetry APIs) with justifications and integration approach
 
 **Acceptance Criteria:**
-- `WRITEUP.md` addresses all three required sections
-- Each section is substantive (not bullet-point filler)
+- `WRITEUP.md` addresses all three required sections ✅
+- Each section is substantive (not bullet-point filler) ✅
 
 ---
 
@@ -175,15 +177,27 @@ Build a Node.js CLI tool (`ducky`) that passively monitors a developer's local e
 **Goal:** End-to-end smoke test confirming all deliverables meet the README requirements.
 
 **Tasks:**
-- [ ] Fresh `npm install` + `npm link` in a clean shell
-- [ ] Run `ducky start` — verify confirmation message and data path are printed
-- [ ] Run `ducky start` again — verify "already tracking" message
-- [ ] Perform some actions (edit a file, make a git commit)
-- [ ] Run `ducky stop` — verify summary is printed and `ducky-report.json` is created
-- [ ] Validate `ducky-report.json` against the required schema
-- [ ] Run `ducky stop` again — verify "no active session" message
-- [ ] Confirm no orphaned processes remain
-- [ ] Confirm `WRITEUP.md` is present and complete
+- [x] Fresh `npm install` + `npm link` in a clean shell
+- [x] Run `ducky start` — verify confirmation message and data path are printed
+- [x] Run `ducky start` again — verify "already tracking" message
+- [x] Perform some actions (edit a file, make a git commit)
+- [x] Run `ducky stop` — verify summary is printed and `ducky-report.json` is created
+- [x] Validate `ducky-report.json` against the required schema
+- [x] Run `ducky stop` again — verify "no active session" message
+- [x] Confirm no orphaned processes remain
+- [x] Confirm `WRITEUP.md` is present and complete
+
+---
+
+### Milestone 9 — Research & Competitive Analysis *(added post-submission)*
+**Goal:** Contextualise ducky against the market, identify customer segments, and surface a prioritised improvement roadmap.
+
+**Tasks:**
+- [x] Identify direct and indirect competitors (WakaTime, GitClear, ActivityWatch, Litmus CLI, assessment platforms)
+- [x] Define customer requirements for three segments: hiring teams, developers, engineering managers
+- [x] Document feature gaps, technical gaps, and business/positioning gaps
+- [x] Produce a prioritised roadmap of 13 improvements across near/medium/long-term horizons
+- [x] Write `Research.md` in the project root
 
 ---
 
@@ -197,7 +211,8 @@ M1 (Scaffolding)
                     └── M5 (Report Generation)
                           └── M6 (Robustness)
                                 └── M8 (Final Verification)
-M7 (WRITEUP.md) — parallel, can be written any time after M4
+M7 (WRITEUP.md) — parallel, written after M4
+M9 (Research.md) — parallel, written after M8
 ```
 
 ---
@@ -220,3 +235,19 @@ M7 (WRITEUP.md) — parallel, can be written any time after M4
 - UI / dashboard
 - Sending data to any external service
 - Authentication or multi-user support
+
+---
+
+## Completion Status
+
+| Milestone | Status | Notes |
+|-----------|--------|-------|
+| M1 — Project Scaffolding | ✅ Complete | `npm link` verified, shebang, bin field |
+| M2 — Core CLI Structure | ✅ Complete | `start`, `stop`, unknown-command fallback |
+| M3 — Background Process Management | ✅ Complete | Detached daemon, PID file, stale recovery, clean stop |
+| M4 — Signal Tracking | ✅ Complete | All 6 trackers: fileSystem, processes, git, clipboard, network, editorState |
+| M5 — Report Generation | ✅ Complete | `ducky-report.json` with metadata + tracking; human-readable terminal summary |
+| M6 — Robustness | ✅ Complete | Error log, orphan cleanup, `windowsHide`, project-dir validation |
+| M7 — WRITEUP.md | ✅ Complete | 3 sections, ~1380 words |
+| M8 — Final Verification | ✅ Complete | All 20 README objectives verified |
+| M9 — Research.md | ✅ Complete | 6 competitors, 3 customer segments, gap analysis, 13-item roadmap |
