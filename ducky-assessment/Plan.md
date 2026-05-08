@@ -13,12 +13,12 @@ Build a Node.js CLI tool (`ducky`) that passively monitors a developer's local e
 **Goal:** Establish a runnable project structure that satisfies the `npm link` requirement before any feature work begins.
 
 **Tasks:**
-- [ ] Confirm `package.json` has correct `bin` field pointing to `src/index.js`
-- [ ] Create `src/` directory
-- [ ] Create `src/index.js` as the CLI entry point with a `#!/usr/bin/env node` shebang
-- [ ] Install `commander` dependency (`npm install`)
-- [ ] Run `npm link` and verify `ducky --help` works globally
-- [ ] Add a `.gitignore` (already present — verify `node_modules` is excluded)
+- [x] Confirm `package.json` has correct `bin` field pointing to `src/index.js`
+- [x] Create `src/` directory
+- [x] Create `src/index.js` as the CLI entry point with a `#!/usr/bin/env node` shebang
+- [x] Install `commander` dependency (`npm install`)
+- [x] Run `npm link` and verify `ducky --help` works globally
+- [x] Add a `.gitignore` (already present — verify `node_modules` is excluded)
 
 **Acceptance Criteria:**
 - `ducky` command is globally accessible after `npm link`
@@ -30,11 +30,11 @@ Build a Node.js CLI tool (`ducky`) that passively monitors a developer's local e
 **Goal:** Wire up the two required commands (`start`, `stop`) with Commander so the routing layer is in place before logic is written.
 
 **Tasks:**
-- [ ] Register `ducky start` command with a description
-- [ ] Register `ducky stop` command with a description
-- [ ] Add a fallback for unknown commands (print help)
-- [ ] Create `src/commands/start.js` stub
-- [ ] Create `src/commands/stop.js` stub
+- [x] Register `ducky start` command with a description
+- [x] Register `ducky stop` command with a description
+- [x] Add a fallback for unknown commands (print help)
+- [x] Create `src/commands/start.js` stub
+- [x] Create `src/commands/stop.js` stub
 
 **Acceptance Criteria:**
 - `ducky start` and `ducky stop` each execute their respective handler without crashing
